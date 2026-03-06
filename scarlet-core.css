@@ -1,1 +1,99 @@
+/*
+Theme Name: IMC Scarlet
+Theme URI: https://imc.ge
+Author: Vano IMC (vtch-dev)
+Author URI: https://imc.ge
+Description: Premium, Ultra-lightweight skeleton theme for Elementor. All assets are synced via GitHub CDN.
+Version: 1.0.0
+License: MIT
+Text Domain: imc-scarlet
+*/
 
+/* 1. Global Variables */
+:root {
+    --scarlet-red: #ef4444;
+    --scarlet-dark: #0f172a;
+    --scarlet-light: #f8fafc;
+    --scarlet-gray: #64748b;
+    --scarlet-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --scarlet-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* 2. High-Performance Reset for Elementor */
+.elementor-section, 
+.elementor-container {
+    transition: var(--scarlet-transition);
+}
+
+/* Fix for Georgian Typography */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 3. Custom Components - Accordion (F.A.Q) */
+.scarlet-faq {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 0.5rem;
+}
+
+.faq-question {
+    padding: 1.25rem 0;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--scarlet-dark);
+    transition: var(--scarlet-transition);
+}
+
+.faq-question:hover {
+    color: var(--scarlet-red);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--scarlet-transition);
+    color: var(--scarlet-gray);
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding-bottom: 1.25rem;
+}
+
+.faq-item.active .faq-question {
+    color: var(--scarlet-red);
+}
+
+/* 4. Utility Classes */
+.imc-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.imc-button-primary {
+    background-color: var(--scarlet-red);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    display: inline-block;
+    transition: var(--scarlet-transition);
+}
+
+.imc-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--scarlet-shadow);
+    opacity: 0.9;
+}
